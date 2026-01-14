@@ -36,7 +36,7 @@ Songs Take Home/
 │   ├── models.py
 │   ├── schemas.py
 │   ├── crud.py
-│   ├── inject_json.py
+│   ├── ingest_json.py
 │   ├── test_api.py
 │   ├── requirements.txt
 │   └── data/
@@ -75,14 +75,14 @@ Create a database:
 CREATE DATABASE musicDB;
 ```
 
-Update connection string in `database.py`:
+Update connection string in `.env`:
 ```python
 DATABASE_URL = "postgresql://postgres:password@localhost:5432/musicDB"
 ```
 
 ### 4️⃣ Load song data
 ```bash
-python inject_json.py
+python ingest_json.py
 ```
 
 ### 5️⃣ Run backend server
