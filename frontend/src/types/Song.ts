@@ -10,5 +10,5 @@ export interface Song {
   duration_ms: number
   num_sections: number
   num_segments: number
-  latest_rating: number | null
+  avg_rating: number | null
 }

@@ -13,7 +13,7 @@ class SongTableResponse(BaseModel):
     duration_ms: int
     num_sections: int
     num_segments: int
-    latest_rating: Optional[int]
+    avg_rating: float | None
 
 
 class RatingCreate(BaseModel):

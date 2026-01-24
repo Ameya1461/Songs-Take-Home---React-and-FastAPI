@@ -32,7 +32,7 @@ function App() {
       setError(null);
 
       const response = await axios.get<Song[]>(`${API_BASE_URL}/songs`, {
-        params: { skip: 0, limit: 10000 },
+        params: { skip: 0, limit: 1000 },
       });
 
       setSongs(response.data);
@@ -143,7 +143,7 @@ function App() {
         song.duration_ms,
         song.num_sections,
         song.num_segments,
-        song.latest_rating ?? "",
+        song.avg_rating ?? "",
       ].join(",")
     );
 
@@ -227,8 +227,8 @@ function App() {
             <th onClick={() => handleSort("num_segments")}>
               Segments{sortIcon("num_segments")}
             </th>
-            <th onClick={() => handleSort("latest_rating")}>
-              Rating{sortIcon("latest_rating")}
+            <th onClick={() => handleSort("avg_rating")}>
+              Rating{sortIcon("avg_rating")}
             </th>
           </tr>
         </thead>
@@ -255,7 +255,7 @@ function App() {
                     style={{
                       cursor: "pointer",
                       color:
-                        song.latest_rating && star <= song.latest_rating
+                        song.avg_rating && star <= song.avg_rating
                           ? "gold"
                           : "gray",
                     }}
